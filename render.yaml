@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: flask-stego-app
+    env: python
+    plan: free
+    region: oregon
+    buildCommand: |
+      pip install --upgrade pip
+      pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10
+      - key: FLASK_ENV
+        value: production
+      # Add more environment variables below (e.g., for email/passwords)
+      # - key: MAIL_USERNAME
+      #   value: your-email@example.com
+      # - key: MAIL_PASSWORD
+      #   value: your-email-password
