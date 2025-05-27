@@ -42,7 +42,7 @@ def save_user(name, email, password):
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('main.html')
 
 @app.route('/signup', methods=['POST'])
 def signup():
